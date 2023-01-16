@@ -4,23 +4,20 @@ const elfCalories = fs.readFileSync(`${__dirname}/input`).toString().split('\n')
 console.log(elfCalories);
 
 const findElf = (arr) => {
-    let bigElf;
-    let bigSum = 0;
-    let sum = 0;
-    let place = 1;
-    for(let i=0; i<arr.length; i++){
-        if ( arr[i] === '' ){
+    let bigElf, bigCals = 0, sum = 0, place = 1;
+    arr.forEach(cal => {
+        if(!cal){
             sum = 0;
-            place++
+            place++;
         } else {
-            sum += parseInt(arr[i])
-            if ( sum > bigSum ){
-                bigSum = sum;
+            sum+= parseInt(cal)
+            if(sum > bigCals){
+                bigCals = sum;
                 bigElf = place;
-            } 
+            }
         }
-    }
-    return `The ${bigElf}th elf is carring the most, with ${bigSum} calories`;
+    })
+    return `The ${bigElf}th elf is carring the most, with ${bigCals} calories`;
 
 }
 console.log(findElf(elfCalories))
