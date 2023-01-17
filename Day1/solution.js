@@ -4,20 +4,22 @@ const elfCalories = fs.readFileSync(`${__dirname}/input`).toString().split('\n')
 console.log(elfCalories);
 
 const findElf = (arr) => {
-    let bigElf, bigCals = 0, sum = 0, place = 1;
+    let bigCals = 0, sum = 0;
+    const topThree = ['howdy'];
     arr.forEach(cal => {
         if(!cal){
+            //check if top three is has less than 3 things in it, if so add sum to it
+            //if top three is full, 
             sum = 0;
-            place++;
+
         } else {
             sum+= parseInt(cal)
             if(sum > bigCals){
                 bigCals = sum;
-                bigElf = place;
             }
         }
     })
-    return `The ${bigElf}th elf is carring the most, with ${bigCals} calories`;
+    return `The elf carring the most has ${bigCals} calories, the top three are ${topThree}`;
 
 }
 console.log(findElf(elfCalories))
