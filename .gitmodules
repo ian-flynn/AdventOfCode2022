@@ -1,0 +1,3 @@
+[submodule "inputsSubmodule"]
+	path = inputsSubmodule
+	url = https://github.com/hellworldo/AdventOfCodeInputs
