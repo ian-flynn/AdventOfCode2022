@@ -1,5 +1,12 @@
 const fs = require('fs');
-const calorieList = fs.readFileSync(`${__dirname}/input`).toString().split('\n');
+const calorieList = fs.readFileSync(`${__dirname}/input`).toString().split('\n');//`${__dirname}/input`
+// console.log(__dirname)
+// console.log(calorieList);
+const folderPath = '/Users/ianflynn/Documents/GitHub/AdventOfCode2022/inputsSubmodule/Day1Input';
+
+// console.log(folderPath)
+console.log(fs.readdirSync(folderPath))
+
 
 let bigCals = 0, sum = 0;
 const topThree = [];
@@ -25,4 +32,4 @@ if(sum > Math.min(...topThree)){
 }
 
 const total = topThree.reduce((acc,curr)=> acc+curr);
-console.log(`The elf carring the most has ${bigCals} calories, the top three have ${topThree[0]}, ${topThree[1]}, ${topThree[2]}. Total of ${total}`);
+// console.log(`The elf carring the most has ${bigCals} calories, the top three have ${topThree[0]}, ${topThree[1]}, ${topThree[2]}. Total of ${total}`);
