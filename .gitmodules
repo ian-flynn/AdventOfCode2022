@@ -1,3 +1,6 @@
 [submodule "inputsSubmodule"]
 	path = inputsSubmodule
 	url = https://github.com/hellworldo/AdventOfCodeInputs
+[submodule "InputsAdvent"]
+	path = InputsAdvent
+	url = https://github.com/ian-flynn/AdventOfCodeInputs
