@@ -4,6 +4,6 @@ const info = fs.readFileSync(folderPath).toString().split('\n')
 // console.log(info)
 //'zBBtHnnHtwwHplmlRlzPLCpp'
 info.forEach(el => {
-    const firstHalf = ;
-    const secondHalf = ;
+    // const firstHalf = ;
+    // const secondHalf = ;
 })
