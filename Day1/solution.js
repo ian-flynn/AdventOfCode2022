@@ -2,7 +2,7 @@ const fs = require('fs');
 const folderPath = '/Users/ianflynn/Documents/GitHub/AdventOfCode2022/inputsSubmodule/Day1';
 const calorieList = fs.readFileSync(folderPath).toString().split('\n')
 
-
+//sssssss test
 let bigCals = 0, sum = 0;
 const topThree = [];
 calorieList.forEach(cal => {
