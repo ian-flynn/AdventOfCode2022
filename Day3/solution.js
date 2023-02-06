@@ -1,9 +1,9 @@
 const { groupCollapsed } = require('console');
 const fs = require('fs');
-const folderPath = '/Users/ianflynn/Documents/GitHub/AdventOfCode2022/inputsSubmodule/Day3';
+const folderPath = '/Users/ianflynn/Documents/GitHub/AdventOfCode2022/Inputs/Day3';
 const info = fs.readFileSync(folderPath).toString().split('\n')
 const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-console.log('Alpha A', alphabet.indexOf('A')+1)
+// console.log('Alpha A', alphabet.indexOf('A')+1)
 function getPriority(char){
     let charCode = char.charCodeAt(0)
     if(charCode >= 'a'.charCodeAt(0)){
@@ -23,23 +23,23 @@ console.log(total)//--> 7597
 
 // ==Part Two==
 
-// const groups = []
-// let group = []
-// for(let i=0; i< info.length; i++){
-//     if(i % 3 === 0 && i !== 0){
-//         groups.push(group)
-//         group = []
-//     }
-//     group.push(info[i].split(''))
-// }
+const groups = []
+let group = []
+for(let i=0; i< info.length; i++){
+    if(i % 3 === 0 && i !== 0){
+        groups.push(group)
+        group = []
+    }
+    group.push(info[i].split(''))
+}
 
-// let newTotal = 0
-// groups.forEach(group => {
-//     // console.log(alphabet.indexOf(group.reduce((acc, curr)=> acc.filter(item => curr.includes(item)))[0] )+1)
-//     newTotal += (alphabet.indexOf(group.reduce((acc, curr)=> acc.filter(item => curr.includes(item)))[0] )+1)
-//     }
-// )
-// console.log(newTotal)
+let newTotal = 0
+groups.forEach(group => {
+    // console.log(alphabet.indexOf(group.reduce((acc, curr)=> acc.filter(item => curr.includes(item)))[0] )+1)
+    newTotal += (alphabet.indexOf(group.reduce((acc, curr)=> acc.filter(item => curr.includes(item)))[0] )+1)
+    }
+)
+console.log(newTotal)
 
 
 
@@ -68,20 +68,20 @@ console.log(total)//--> 7597
 // q 16
 // g 6
 // F 31
-42
-32
-48
-39
-48
-1
-38
-31
-9
-22
-28
-11
-17
-13
-16
-6
-31
+// 42
+// 32
+// 48
+// 39
+// 48
+// 1
+// 38
+// 31
+// 9
+// 22
+// 28
+// 11
+// 17
+// 13
+// 16
+// 6
+// 31
