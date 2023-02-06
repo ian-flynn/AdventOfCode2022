@@ -1,5 +1,5 @@
 const fs = require('fs');
-const folderPath = '/Users/ianflynn/Documents/GitHub/AdventOfCode2022/Inputs/Day2';
+const folderPath = '../Inputs/Day2';
 const moves = fs.readFileSync(folderPath).toString().split('\n')
 
 // console.log(moves)

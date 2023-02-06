@@ -1,6 +1,5 @@
 const fs = require('fs');
-const folderPath = '/Users/ianflynn/Documents/GitHub/AdventOfCode2022/Inputs/Day1';
-
+const folderPath = '../Inputs/Day1';
 const calorieList = fs.readFileSync(folderPath).toString().split('\n')
 
 let bigCals = 0, sum = 0;
