@@ -1,3 +1,0 @@
-[submodule "inputsSubmodule"]
-	path = inputsSubmodule
-	url = https://github.com/ian-flynn/AdventOfCodeInputs
