@@ -25,63 +25,20 @@ console.log(total)//--> 7597
 
 const groups = []
 let group = []
-for(let i=0; i< info.length; i++){
+for(let i=0; i<= info.length; i++){
     if(i % 3 === 0 && i !== 0){
         groups.push(group)
         group = []
     }
-    group.push(info[i].split(''))
+    if(info[i])group.push(info[i].split(''))
+    
 }
-
+// groups.push(group)
 let newTotal = 0
+
 groups.forEach(group => {
     // console.log(alphabet.indexOf(group.reduce((acc, curr)=> acc.filter(item => curr.includes(item)))[0] )+1)
-    newTotal += (alphabet.indexOf(group.reduce((acc, curr)=> acc.filter(item => curr.includes(item)))[0] )+1)
+    newTotal += alphabet.indexOf(group.reduce((acc, curr)=> acc.filter(item => curr.includes(item)))[0] )+1
     }
 )
 console.log(newTotal)
-
-
-
-// let group = [
-//     ['c', 's', 'T', 'R', 'N','Q', 'N', 'J', 'c', 'N','B', 'D', 'L', 'f', 'h','f', 'M', 'f'],
-//     ['q', 'G', 'm', 'W', 'p','G', 'H', 'q', 'r', 'q','P', 'L', 'C', 'h', 'P','R', 'h', 'V', 'F', 'P','D', 'D'],
-//     ['t', 'g', 'H', 'r','t', 'n', 'r', 'r', 'J', 'n', 'Z', 'R','T', 'Z', 'c', 'v']
-// ]
-// let badge = group.reduce((acc, curr)=> acc.filter(item => curr.includes(item)))
-// console.log(badge)
-// const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-// Q
-// G
-// W
-// N
-// W
-// b1
-// M38
-// F31
-// j9
-// w22
-// C28
-// l11
-// r17
-// n13
-// q 16
-// g 6
-// F 31
-// 42
-// 32
-// 48
-// 39
-// 48
-// 1
-// 38
-// 31
-// 9
-// 22
-// 28
-// 11
-// 17
-// 13
-// 16
-// 6
-// 31
