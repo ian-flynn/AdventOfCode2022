@@ -11,9 +11,9 @@ function pairFormatter(array){ // '1-69,37-69' ==> [ [1, 69], [37, 69] ]
     })
 }
 const formattedPairs = pairFormatter(cleaningPairs)
-console.log(formattedPairs)
+// console.log(formattedPairs)
 
-function overlapDetector(array){
+function envelopeDetector(array){
     return array.reduce((acc, curr) => { //  [ [1, 69], [37, 69] ]
         const elfOne = curr[0] //  [1, 69]
         const elfTwo = curr[1] //  [37, 69]
@@ -23,7 +23,20 @@ function overlapDetector(array){
     }, 0)
 }
 
-const overlapsFound = overlapDetector(formattedPairs)
-console.log('Part One Solution: ', overlapsFound) // ==> 536
+const envelopesFound = envelopeDetector(formattedPairs)
+console.log('Part One Solution: ', envelopesFound) // ==> 536
 
 // == Part Two ==
+
+function overlapDetector(array){
+    return array.reduce((acc, curr) => { //  [ [ 22, 89 ], [ 23, 99 ] ]
+        const elfOne = curr[0] //  [ 22, 89 ]
+        const elfTwo = curr[1] //  [ 23, 99 ]
+        if(elfOne[0] <= elfTwo[0] && elfOne[1] >= elfTwo[0]) return acc + 1
+        if(elfTwo[0] <= elfOne[0] && elfTwo[1] >= elfOne[0]) return acc + 1
+        return acc;
+    }, 0)
+}
+
+const overlapsFound = overlapDetector(formattedPairs)
+console.log('Part Two Solution: ', overlapsFound) // ==> 845
