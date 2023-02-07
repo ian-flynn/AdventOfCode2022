@@ -1,5 +1,4 @@
 const fs = require('fs');
-// const folderPath = '/Users/ianflynn/Documents/GitHub/AdventOfCode2022/Inputs/Day3';
 const folderPath = '../Inputs/Day3';
 const backpacks = fs.readFileSync(folderPath).toString().split('\n')
 
