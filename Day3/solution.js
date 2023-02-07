@@ -11,6 +11,7 @@ function getPriority(char){
 // ==Part One==
 
 let part1Total = 0;
+
 backpacks.forEach(el => {
     const firstCompartment = el.slice(0, el.length/2).split('');
     const secondCompartment = el.slice(el.length/2);
@@ -23,13 +24,12 @@ console.log('Part 1 Total: ', part1Total) // ==> 7597
 
 const groups = []
 let group = []
-for(let i=0; i<= backpacks.length; i++){
-    if(i % 3 === 0 && i !== 0){
+for( let i = 0; i <= backpacks.length; i++ ){
+    if( i % 3 === 0 && i !== 0 ){
         groups.push(group)
         group = []
     }
-    if(backpacks[i]) group.push(backpacks[i].split(''))
-    
+    if( backpacks[i] ) group.push(backpacks[i].split(''))
 }
 
 const part2Total = groups.reduce((acc, curr) => {
