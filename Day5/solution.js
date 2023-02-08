@@ -33,18 +33,46 @@ function stackMaker(inputArray) {
 //8 [ 'W', 'G', 'D', 'N', 'P', 'L' ]
 
 //[ 'move', '6', 'from', '6', 'to', '5' ]
-function doMoves() {
+function doMoves(craneModel) {
     const stacks = stackMaker(stacksInfo)
 
-    movesInfo.forEach(move => {
+    movesInfo.forEach((move) => {
         move = move.split(' ')
 
-        const numberToMove = move[1]
+        let numberToMove = move[1]
         const moveFrom = move[3] - 1 //index of actual stack are minus1 though so fix that
         const moveTo = move[5] - 1
-        console.log(numberToMove, moveFrom, moveTo)
+        // console.log(numberToMove, moveFrom, moveTo)
+        if (craneModel === 'CrateMover 9000') {
+            while (numberToMove > 0) {
+                stacks[moveTo].push(stacks[moveFrom].pop())
+                numberToMove--
+            }
+        }
+        if (craneModel === 'CrateMover 9001') {
+            //[ 'move', '6', 'from', '6', 'to', '5' ]
+            // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            // console.log(arr.splice(-6, 6))
+            // console.log(arr)
+            stacks[moveTo].push(...stacks[moveFrom].splice(-numberToMove, numberToMove))
+        }
 
     })
-
+    return stacks
 }
-console.log(doMoves())
+console.log('Part One Solution: ', doMoves('CrateMover 9000'))
+//0 [ 'T' ],
+//1 [ 'W' ],
+//2 [ 'W', 'J', 'N', 'S' ],
+//3 [ 'N', 'M', 'V', 'R','D', 'N', 'H', 'Z','T', 'P', 'J', 'G' ],
+//4 [ 'L', 'C', 'Q' ],
+//5 [ 'M', 'W', 'B','W', 'D', 'P','H'],
+//6 [ 'S', 'P', 'G', 'N', 'C','G', 'M', 'H', 'N', 'L','W', 'T', 'N', 'D', 'T','W', 'G', 'R', 'N'],
+//7 [ 'Q', 'D', 'H' ],
+//8 [ 'P', 'B', 'B', 'L', 'C', 'L' ]
+console.log('Part Two Solution: ', doMoves('CrateMover 9001'))
+
+//[ 'move', '6', 'from', '6', 'to', '5' ]
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// console.log(arr.splice(-6, 6))
+// console.log(arr)
