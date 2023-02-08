@@ -1,0 +1,19 @@
+{
+  "name": "adventofcode2022",
+  "version": "1.0.0",
+  "description": "2022 solutions repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ian-flynn/AdventOfCode2022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ian-flynn/AdventOfCode2022/issues"
+  },
+  "homepage": "https://github.com/ian-flynn/AdventOfCode2022#readme"
+}
